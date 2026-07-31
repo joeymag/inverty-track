@@ -3,7 +3,7 @@
   "version": "2.0.1",
   "license": "MIT",
   "scripts": {
-    "build": "prisma generate && prisma migrate deploy && next build",
+    "build": "prisma generate && next build",
     "dev": "next dev",
     "migrate": "prisma migrate dev",
     "postinstall": "prisma generate",
