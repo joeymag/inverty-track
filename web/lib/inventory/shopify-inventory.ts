@@ -25,6 +25,30 @@ export type ProductVariantOption = {
   inventoryQuantity: number;
 };
 
+type ProductsResponse = {
+  products: {
+    pageInfo: { hasNextPage: boolean; endCursor: string | null };
+    nodes: Array<{
+      id: string;
+      title: string;
+      variants: {
+        nodes: Array<{
+          id: string;
+          title: string;
+          sku: string | null;
+          inventoryQuantity: number;
+          inventoryItem: { id: string };
+        }>;
+      };
+    }>;
+  };
+};
+
+type GraphqlResult<T> = {
+  data?: T;
+  errors?: { message: string };
+};
+
 const GET_PRODUCTS_WITH_VARIANTS = `#graphql
   query getProductsWithVariants($first: Int!, $after: String) {
     products(first: $first, after: $after) {
@@ -62,32 +86,12 @@ export async function getProductVariants(
   let hasNextPage = true;
 
   while (hasNextPage && variants.length < limit) {
-    type ProductsResponse = {
-      products: {
-        pageInfo: { hasNextPage: boolean; endCursor: string | null };
-        nodes: Array<{
-          id: string;
-          title: string;
-          variants: {
-            nodes: Array<{
-              id: string;
-              title: string;
-              sku: string | null;
-              inventoryQuantity: number;
-              inventoryItem: { id: string };
-            }>;
-          };
-        }>;
-      };
-    };
-
-    const response = await client.request<ProductsResponse>(
+    const { data, errors } = (await client.request<ProductsResponse>(
       GET_PRODUCTS_WITH_VARIANTS,
       {
         variables: { first: 50, after },
       },
-    );
-    const { data, errors } = response;
+    )) as GraphqlResult<ProductsResponse>;
 
     if (errors) {
       throw new Error(errors.message);
