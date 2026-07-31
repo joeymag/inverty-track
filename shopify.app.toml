@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "4808718991f90c31b74d6e2c3e3e14cf"
+name = "inverty-track"
+application_url = "https://inverty-track.vercel.app"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = false
+dev_store_url = "test-1111111111111111111111111111111111711111111111133134.myshopify.com"
+include_config_on_deploy = true
+
+[access.admin]
+direct_api_mode = "offline"
+embedded_app_direct_api_access = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_products,write_products,read_inventory,write_inventory,read_orders"
+use_legacy_install_flow = false
+
+[auth]
+redirect_urls = [
+  "https://inverty-track.vercel.app/auth/callback",
+  "https://inverty-track.vercel.app/auth/shopify/callback",
+  "https://inverty-track.vercel.app/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-10"
+
+[pos]
+embedded = false
