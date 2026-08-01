@@ -1,6 +1,6 @@
 "use server";
-import { registerWebhooks } from "@/lib/shopify/register-webhooks";
-import { handleSessionToken } from "@/lib/shopify/verify";
+import { registerWebhooks } from "../lib/shopify/register-webhooks";
+import { handleSessionToken } from "../lib/shopify/verify";
 
 /**
  * Do the server action and return the status

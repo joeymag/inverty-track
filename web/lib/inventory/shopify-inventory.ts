@@ -1,5 +1,5 @@
-import shopify from "@/lib/shopify/initialize-context";
-import { findSessionsByShop } from "@/lib/db/session-storage";
+import shopify from "../shopify/initialize-context";
+import { findSessionsByShop } from "../db/session-storage";
 import { Session } from "@shopify/shopify-api";
 
 export async function getOfflineSession(shop: string): Promise<Session> {

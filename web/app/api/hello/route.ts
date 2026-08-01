@@ -1,4 +1,4 @@
-import { verifyRequest } from "@/lib/shopify/verify";
+import { verifyRequest } from "../../../lib/shopify/verify";
 import { NextResponse } from "next/server";
 
 export type APIResponse<DataType> = {

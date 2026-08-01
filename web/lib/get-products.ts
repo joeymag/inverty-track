@@ -1,11 +1,11 @@
 // Example of how to use the generated types from the backend
 
-import shopify from "@/lib/shopify/initialize-context";
+import shopify from "./shopify/initialize-context";
 import { findSessionsByShop } from "./db/session-storage";
 import {
   GetProductsQuery,
   GetProductsQueryVariables,
-} from "@/types/admin.generated";
+} from "../types/admin.generated";
 
 const GET_PRODUCTS = /* GraphQL */ `
   query getProducts($first: Int!) {

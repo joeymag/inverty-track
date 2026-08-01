@@ -1,8 +1,8 @@
-import { verifyRequest } from "@/lib/shopify/verify";
-import { getMappings } from "@/lib/inventory/mappings";
-import { syncAllChildInventories } from "@/lib/inventory/process-order";
+import { verifyRequest } from "../../../lib/shopify/verify";
+import { getMappings } from "../../../lib/inventory/mappings";
+import { syncAllChildInventories } from "../../../lib/inventory/process-order";
 import { NextResponse } from "next/server";
-import type { APIResponse } from "@/app/api/mappings/route";
+import type { APIResponse } from "../mappings/route";
 
 export async function POST(req: Request) {
   try {

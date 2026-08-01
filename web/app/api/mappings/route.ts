@@ -1,14 +1,14 @@
-import { verifyRequest } from "@/lib/shopify/verify";
+import { verifyRequest } from "../../../lib/shopify/verify";
 import {
   createMapping,
   deleteMapping,
   getMappings,
-} from "@/lib/inventory/mappings";
+} from "../../../lib/inventory/mappings";
 import {
   getMasterInventorySummary,
   syncAllChildInventories,
-} from "@/lib/inventory/process-order";
-import { getPrimaryLocationId } from "@/lib/inventory/shopify-inventory";
+} from "../../../lib/inventory/process-order";
+import { getPrimaryLocationId } from "../../../lib/inventory/shopify-inventory";
 import { NextResponse } from "next/server";
 
 export type APIResponse<DataType> = {

@@ -2,12 +2,12 @@
 
 client_id = "4808718991f90c31b74d6e2c3e3e14cf"
 name = "inverty-track"
-application_url = "https://inverty-track.vercel.app"
+application_url = "https://localhost"
 embedded = true
 
 [build]
-automatically_update_urls_on_dev = false
-dev_store_url = "test-1111111111111111111111111111111111711111111111133134.myshopify.com"
+automatically_update_urls_on_dev = true
+dev_store_url = "hhuyu4-5r.myshopify.com"
 include_config_on_deploy = true
 
 [access.admin]
@@ -20,11 +20,7 @@ scopes = "read_products,write_products,read_inventory,write_inventory,read_order
 use_legacy_install_flow = false
 
 [auth]
-redirect_urls = [
-  "https://inverty-track.vercel.app/auth/callback",
-  "https://inverty-track.vercel.app/auth/shopify/callback",
-  "https://inverty-track.vercel.app/api/auth/callback"
-]
+redirect_urls = [ "https://localhost/api/auth" ]
 
 [webhooks]
 api_version = "2024-10"

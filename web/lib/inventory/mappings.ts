@@ -1,4 +1,4 @@
-import prisma from "@/lib/db/prisma-connect";
+import prisma from "../db/prisma-connect";
 import { SkuMapping } from "@prisma/client";
 
 export type CreateMappingInput = {

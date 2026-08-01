@@ -1,5 +1,5 @@
-import { storeSession } from "@/lib/db/session-storage";
-import shopify from "@/lib/shopify/initialize-context";
+import { storeSession } from "../db/session-storage";
+import shopify from "./initialize-context";
 import { RequestedTokenType, Session } from "@shopify/shopify-api";
 
 export class AppNotInstalledError extends Error {

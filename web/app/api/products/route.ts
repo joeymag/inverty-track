@@ -1,7 +1,7 @@
-import { verifyRequest } from "@/lib/shopify/verify";
-import { getProductVariants } from "@/lib/inventory/shopify-inventory";
+import { verifyRequest } from "../../../lib/shopify/verify";
+import { getProductVariants } from "../../../lib/inventory/shopify-inventory";
 import { NextResponse } from "next/server";
-import type { APIResponse } from "@/app/api/mappings/route";
+import type { APIResponse } from "../mappings/route";
 
 export async function GET(req: Request) {
   try {
