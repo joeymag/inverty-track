@@ -11,7 +11,10 @@ const nextConfig = {
   ...(host ? { allowedDevOrigins: [host] } : {}),
   outputFileTracingRoot: path.join(__dirname),
   webpack: (config) => {
-    config.resolve.alias["@"] = path.join(__dirname);
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@": path.resolve(__dirname),
+    };
     return config;
   },
 };
